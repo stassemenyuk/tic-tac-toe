@@ -45,7 +45,8 @@ export default class Board extends Component {
       (square[8] === 'x' && square[5] === 'x' && square[2] === 'x') ||
       (square[0] === 'x' && square[1] === 'x' && square[2] === 'x') ||
       (square[0] === 'x' && square[4] === 'x' && square[8] === 'x') ||
-      (square[6] === 'x' && square[4] === 'x' && square[2] === 'x')
+      (square[6] === 'x' && square[4] === 'x' && square[2] === 'x') ||
+      (square[1] === 'x' && square[4] === 'x' && square[7] === 'x')
     ) {
       return (
         <div className="win">
@@ -64,7 +65,8 @@ export default class Board extends Component {
       (square[8] === 'o' && square[5] === 'o' && square[2] === 'o') ||
       (square[0] === 'o' && square[1] === 'o' && square[2] === 'o') ||
       (square[0] === 'o' && square[4] === 'o' && square[8] === 'o') ||
-      (square[6] === 'o' && square[4] === 'o' && square[2] === 'o')
+      (square[6] === 'o' && square[4] === 'o' && square[2] === 'o') ||
+      (square[1] === 'o' && square[4] === 'o' && square[7] === 'o')
     ) {
       return (
         <div className="win">
