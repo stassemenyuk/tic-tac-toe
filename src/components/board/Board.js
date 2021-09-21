@@ -76,6 +76,27 @@ export default class Board extends Component {
       );
     }
 
+    if (
+      square[0] !== '' &&
+      square[1] !== '' &&
+      square[2] !== '' &&
+      square[3] !== '' &&
+      square[4] !== '' &&
+      square[5] !== '' &&
+      square[6] !== '' &&
+      square[7] !== '' &&
+      square[8] !== ''
+    ) {
+      return (
+        <div className="win">
+          <div className="text">Draw</div>
+          <button className="restart-btn" onClick={this.restart}>
+            Restart
+          </button>
+        </div>
+      );
+    }
+
     return (
       <div className="board">
         <div className="current">Current turn: {currentSign}</div>
