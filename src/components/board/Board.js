@@ -29,7 +29,6 @@ export default class Board extends Component {
     this.setState({
       square: newArr,
     });
-    console.log(this.state.square);
   }
 
   restart() {
