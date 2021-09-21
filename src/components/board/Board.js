@@ -36,7 +36,7 @@ export default class Board extends Component {
   }
 
   render() {
-    const { square } = this.state;
+    const { square, currentSign } = this.state;
 
     if (
       (square[0] === 'x' && square[3] === 'x' && square[6] === 'x') ||
@@ -78,6 +78,7 @@ export default class Board extends Component {
 
     return (
       <div className="board">
+        <div className="current">Current turn: {currentSign}</div>
         <Box fill={square[0]} id={0} handleClick={this.handleClick} />
         <Box fill={square[1]} id={1} handleClick={this.handleClick} />
         <Box fill={square[2]} id={2} handleClick={this.handleClick} />
