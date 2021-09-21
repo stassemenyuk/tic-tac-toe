@@ -32,7 +32,7 @@ export default class Board extends Component {
   }
 
   restart() {
-    this.setState({ square: ['', '', '', '', '', '', '', '', ''] });
+    this.setState({ square: ['', '', '', '', '', '', '', '', ''], currentSign: 'x' });
   }
 
   render() {
