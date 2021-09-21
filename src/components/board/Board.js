@@ -12,6 +12,7 @@ export default class Board extends Component {
     };
 
     this.handleClick = this.handleClick.bind(this);
+    this.restart = this.restart.bind(this);
   }
 
   handleClick(id) {
@@ -31,8 +32,51 @@ export default class Board extends Component {
     console.log(this.state.square);
   }
 
+  restart() {
+    this.setState({ square: ['', '', '', '', '', '', '', '', ''] });
+  }
+
   render() {
     const { square } = this.state;
+
+    if (
+      (square[0] === 'x' && square[3] === 'x' && square[6] === 'x') ||
+      (square[3] === 'x' && square[4] === 'x' && square[5] === 'x') ||
+      (square[6] === 'x' && square[7] === 'x' && square[8] === 'x') ||
+      (square[8] === 'x' && square[5] === 'x' && square[2] === 'x') ||
+      (square[0] === 'x' && square[1] === 'x' && square[2] === 'x') ||
+      (square[0] === 'x' && square[4] === 'x' && square[8] === 'x') ||
+      (square[6] === 'x' && square[4] === 'x' && square[2] === 'x')
+    ) {
+      return (
+        <div className="win">
+          <div className="text">X Wins</div>
+          <button className="restart-btn" onClick={this.restart}>
+            Restart
+          </button>
+        </div>
+      );
+    }
+
+    if (
+      (square[0] === 'o' && square[3] === 'o' && square[6] === 'o') ||
+      (square[3] === 'o' && square[4] === 'o' && square[5] === 'o') ||
+      (square[6] === 'o' && square[7] === 'o' && square[8] === 'o') ||
+      (square[8] === 'o' && square[5] === 'o' && square[2] === 'o') ||
+      (square[0] === 'o' && square[1] === 'o' && square[2] === 'o') ||
+      (square[0] === 'o' && square[4] === 'o' && square[8] === 'o') ||
+      (square[6] === 'o' && square[4] === 'o' && square[2] === 'o')
+    ) {
+      return (
+        <div className="win">
+          <div className="text">O Wins</div>
+          <button className="restart-btn" onClick={this.restart}>
+            Restart
+          </button>
+        </div>
+      );
+    }
+
     return (
       <div className="board">
         <Box fill={square[0]} id={0} handleClick={this.handleClick} />
