@@ -15,6 +15,9 @@ export default class Board extends Component {
   }
 
   handleClick(id) {
+    if (this.state.square[id] === 'x' || this.state.square[id] === 'o') {
+      return;
+    }
     const newArr = [
       ...this.state.square.slice(0, id),
       this.state.currentSign,
